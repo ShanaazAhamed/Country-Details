@@ -1,0 +1,148 @@
+html,
+body {
+  height: 100%;
+  width: 100%;
+  /* margin: 0; */
+}
+
+.navbar {
+  width: 65% !important;
+  margin: 0px auto;
+  left: 0;
+  right: 0;
+  padding: 10px 0px;
+}
+
+#map {
+  height: 100%;
+  width: 100%;
+}
+
+table {
+  font-size: 0.8rem;
+}
+
+.navbar {
+  background-color: transparent;
+}
+
+.modal-dialog {
+  height: 40vh;
+  overflow-x: hidden;
+}
+
+#wiki-container {
+  /* height: 40vh; */
+  overflow: hidden;
+}
+
+.table {
+  overflow: hidden;
+}
+
+.weatherImg {
+  width: 100px;
+  height: 100px;
+}
+.news-img {
+  width: 50%;
+  height: auto;
+}
+.wiki-img {
+  width: 100%;
+  height: auto;
+}
+.country {
+  width: auto;
+  height: 30px;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card-weather {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.weather-modal {
+  background: #2193b0;
+  background: -webkit-linear-gradient(to right, #6dd5ed, #2193b0);
+  background: linear-gradient(to right, #6dd5ed, #2193b0);
+}
+.weather {
+  overflow: hidden;
+}
+
+.card {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.cardText {
+  margin: 0;
+}
+/* .loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #f1f2f3;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+} */
+
+#loader {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  background: url("../images/loader.gif") 50% 50% no-repeat #fff;
+  opacity: 1;
+  display: block;
+}
+
+.modal {
+  overflow: hidden;
+}
+.modal-body {
+  max-height: calc(100vh - 200px);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.news-img {
+  height: 50px;
+  width: auto;
+}
+
+/* .disppear {
+  animation: vanish 0.1s forwards;
+}
+@keyframes vanish {
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+} */
+
+.wiki-text {
+  font-size: 0.9rem;
+}
+
+.mask-img {
+  width: 2rem;
+  height: auto;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+.covid-text {
+  font-size: 1rem;
+}
