@@ -13,8 +13,8 @@
   <link rel="stylesheet" href="asserts/leaflet/Leaflet.markercluster/dist/MarkerCluster.Default.css">
   <script src="asserts/js/countryBorders.js"></script>
   <link rel="stylesheet" href="asserts/css/style.css" />
-  <title>Gazetteer</title>
-  <link rel="icon" type="image/x-icon" href="asserts/images/fav.ico">
+  <title>Country Details</title>
+  <link rel="icon" type="image/x-icon" href="asserts/images/favicon.ico">
 
 </head>
 

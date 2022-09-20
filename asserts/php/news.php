@@ -6,11 +6,13 @@ error_reporting(E_ALL);
 $key = '9ead35c0b5444ce38d2384975e746f09';
 
 $url = 'https://newsapi.org/v2/top-headlines?country=' . $_REQUEST['countryCode'] . '&category=business&apiKey=' . $key;
+// $url='https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=9ead35c0b5444ce38d2384975e746f09';
 
 $ch = curl_init();
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_USERAGENT, "country detials");
 
 $result = curl_exec($ch);
 curl_close($ch);

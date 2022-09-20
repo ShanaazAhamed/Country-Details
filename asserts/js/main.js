@@ -58,12 +58,14 @@ $(function () {
     dataType: "json",
     success: function (result) {
       countryNames = result;
+
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
           getCurrentPosition(position);
         });
       } else {
-        console.log("Geolocation is not supported by this browser.");
+        alert("Plaese Turn on location");
+        location.reload();
       }
     },
     error: function (jqXHR, textStatus, errorThrown) {
@@ -249,26 +251,26 @@ function loadDetails(val) {
     },
   });
 
-  $.ajax({
-    url: "asserts/php/weather.php",
-    type: "POST",
-    dataType: "json",
-    async: false,
-    data: {
-      lat: latitude,
-      lng: longitude,
-    },
-    success: function (result) {
-      if (result["status"] == "200") {
-        modalBody += `<tr><td>Current weather</td> <td> ${result["weather"]}</td></tr>`;
-      }
-    },
-    error: function (jqXHR, textStatus, errorThrown) {
-      console.log(latitude, longitude);
-      console.log("error weather AJAX");
-      console.log(jqXHR, textStatus, errorThrown);
-    },
-  });
+  // $.ajax({
+  //   url: "asserts/php/weather.php",
+  //   type: "POST",
+  //   dataType: "json",
+  //   async: false,
+  //   data: {
+  //     lat: latitude,
+  //     lng: longitude,
+  //   },
+  //   success: function (result) {
+  //     if (result["status"] == "200") {
+  //       modalBody += `<tr><td>Current weather</td> <td> ${result["weather"]}</td></tr>`;
+  //     }
+  //   },
+  //   error: function (jqXHR, textStatus, errorThrown) {
+  //     console.log(latitude, longitude);
+  //     console.log("error weather AJAX");
+  //     console.log(jqXHR, textStatus, errorThrown);
+  //   },
+  // });
 
   $.ajax({
     url: "asserts/php/covid.php",
@@ -278,24 +280,22 @@ function loadDetails(val) {
       countryCode: currentCountry,
     },
     success: function (result) {
-      const d = new Date(result["updated"]);
+      const d = new Date(result["Date"]);
       let month;
       d.getMonth() < 10
         ? (month = "0" + (d.getMonth() + 1))
         : (month = d.getMonth());
       lastupdate = d.getFullYear() + "/" + month + "/" + d.getDate();
-      totalCases = result["cases"];
-      totalDeaths = result["deaths"];
-      activeCases = result["active"];
-      todayCases = result["todayCases"];
-      todayDeaths = result["todayDeaths"];
-      covidModal += `<tr><td>Today Cases</td><td>${todayCases}</td></tr>
-      <tr><td>Today Deaths</td><td>${todayDeaths}</td></tr>
-      <tr><td>Active Cases</td><td>${activeCases}</td></tr>
+      totalCases = result["Confirmed"];
+      totalDeaths = result["Deaths"];
+      // activeCases = result["active"];
+      // todayCases = result["todayCases"];
+      // todayDeaths = result["todayDeaths"];
+      covidModal += `
       <tr><td>Total Cases</td><td>${totalCases}</td></tr>
-      <tr><td>Total Deaths</td><td>${totalDeaths}</td></tr>
+      <tr><td>Total Daths</td><td>${totalDeaths}</td></tr>
       <tr><td>Last Update</td><td>${lastupdate}</td></tr>
-      <tr class="bg-success"><td colspan="2" class="text-center text-white"><b>Please wear Face</b><img class="mask-img" src="asserts/images/mask.png" alt="mask"><b>Mask</b></td></tr>
+      <tr class="bg-success"><td colspan="2" class="text-center text-white"><b><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" target="_blank" style="text-decoration: none;color: inherit;">Keep yourself and others safe!</b><img class="mask-img" src="asserts/images/who.png" alt="mask"></a></td></tr>
       </tbody></table>`;
     },
     error: function (jqXHR, textStatus, errorThrown) {
@@ -326,7 +326,7 @@ function loadDetails(val) {
             <h5><b>${title}</b></h5>
             <p class="mb-0 wiki-text">${summary.replace(
               "(...)",
-              `<small class="mt-0"><a href="http://${wikiUrl}" target="_blank">...read more</a></small>`
+              `<p class="mt-0"><a href="http://${wikiUrl}" target="_blank">...read more</a></p>`
             )}</p>
           </div>
           </div>
@@ -344,9 +344,9 @@ function loadDetails(val) {
             data: {
               countryCode: currentCountry,
             },
-            complete: function (res) {},
             success: function (res) {
-              if (res["status"] === "200") {
+              if (res["status"] == "200") {
+                // console.log(res);
                 if (res["totalResults"] > 0) {
                   for (let i = 0; i < res["totalResults"]; i++) {
                     let title;
@@ -385,8 +385,13 @@ function loadDetails(val) {
                   }
                   newsModal += `</tbody></table>`;
                 } else {
-                  newsModal = wikiModal;
+                  newsModal += `<tr>`;
+                  newsModal = `<td>No news available</td></tr></body></table>`;
                 }
+              } else {
+                console.log(res,currentCountry);
+                newsModal += `<tr>`;
+                newsModal = `<td>No news available</td></tr></body></table>`;
               }
             },
             error: function (jqXHR, textStatus, errorThrown) {
@@ -564,11 +569,6 @@ L.easyButton("fa fa-info-circle", function (btn, map) {
   $("#details").modal("show");
 }).addTo(map);
 
-L.easyButton("fa fa-newspaper-o", function (btn, map) {
-  $("#news-container").html(newsModal);
-  $("#news").modal("show");
-}).addTo(map);
-
 L.easyButton("fa fa-sun-o", function (btn, map) {
   $("#weather").modal("show");
 }).addTo(map);
@@ -579,12 +579,17 @@ L.easyButton("fa fa-usd", function (btn, map) {
   $("#exRate").modal("show");
 }).addTo(map);
 
-L.easyButton("fa fa-wikipedia-w", function (btn, map) {
-  $("#wiki-container").html(wikiModal);
-  $("#wiki").modal("show");
-}).addTo(map);
-
 L.easyButton("fa fa-medkit", function (btn, map) {
   $("#covid-container").html(covidModal);
   $("#covid").modal("show");
+}).addTo(map);
+
+L.easyButton("fa fa-newspaper-o", function (btn, map) {
+  $("#news-container").html(newsModal);
+  $("#news").modal("show");
+}).addTo(map);
+
+L.easyButton("fa fa-wikipedia-w", function (btn, map) {
+  $("#wiki-container").html(wikiModal);
+  $("#wiki").modal("show");
 }).addTo(map);
