@@ -37,12 +37,12 @@
 </div>
 
 <div>
- <h3>Wikipedia</h3>
+ <h3>News</h3>
  <img src="https://user-images.githubusercontent.com/77115237/191187585-b9e9d2e9-06cb-433b-8262-b04e51de5542.png" width="100%" height="auto">
 </div>
 
 <div>
-<h3>News</h3>
+<h3>Wikipedia</h3>
  <img src="https://user-images.githubusercontent.com/77115237/191187576-54837a67-710d-4a4c-a06b-3a63b9cb144b.png" width="100%" height="auto">
 </div>
 
