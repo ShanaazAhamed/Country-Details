@@ -293,7 +293,7 @@ function loadDetails(val) {
       // todayDeaths = result["todayDeaths"];
       covidModal += `
       <tr><td>Total Cases</td><td>${totalCases}</td></tr>
-      <tr><td>Total Daths</td><td>${totalDeaths}</td></tr>
+      <tr><td>Total Death</td><td>${totalDeaths}</td></tr>
       <tr><td>Last Update</td><td>${lastupdate}</td></tr>
       <tr class="bg-success"><td colspan="2" class="text-center text-white"><b><a href="https://www.who.int/emergencies/diseases/novel-coronavirus-2019/advice-for-public" target="_blank" style="text-decoration: none;color: inherit;">Keep yourself and others safe!</b><img class="mask-img" src="asserts/images/who.png" alt="mask"></a></td></tr>
       </tbody></table>`;
