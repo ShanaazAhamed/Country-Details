@@ -281,11 +281,11 @@ function loadDetails(val) {
     },
     success: function (result) {
       const d = new Date(result["Date"]);
-      let month;
-//       d.getMonth() < 10
-//         ? (month = "0" + (d.getMonth() + 1))
-//         : (month = d.getMonth());
-      month = d.getMonth()
+      let month =   d.getMonth() + 1;
+      month < 10
+        ? (month = "0" + month)
+        : (month = month);
+   
       lastupdate = d.getFullYear() + "/" + month + "/" + d.getDate();
       totalCases = result["Confirmed"];
       totalDeaths = result["Deaths"];
