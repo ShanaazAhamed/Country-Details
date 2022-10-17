@@ -1,7 +1,7 @@
 # Country Details
 
 This is a simple Web application that uses HTML5,JS,CSS, Leaflet maps and BootStrap4 for the front end and PHP for the back end.
-The application is intended to provide a responsive GUI to facilitate certain vital features for browse the country details with bounded boarder map. The application provides the following features. All the features fetched from API's.
+The application is intended to provide a responsive GUI to facilitate certain vital features for browse the country details with bounded boarder map. The application provides the following features. All the features are fetched from API's.
 ```
 1. Loads the country based on your location initially.
 2. Select & view other country map & details
