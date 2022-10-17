@@ -18,7 +18,7 @@ The following video shows a demonstration of the features provided by the applic
 https://user-images.githubusercontent.com/77115237/196286011-fc928ff6-a834-4b6f-9cc2-af3ffe4c18b8.mp4
 
 
-#### Used API's
+#### Used API's 
  - https://api.openweathermap.org
  - https://api.covid19api.com
  - https://openexchangerates.org
@@ -27,6 +27,6 @@ https://user-images.githubusercontent.com/77115237/196286011-fc928ff6-a834-4b6f-
  - http://api.geonames.org
   
 `asserts\php\countryBorders.geo.json` used for bound the boarder of the countries. <a href="[`Leaflet`](https://leafletjs.com/)">`Leaflet`</a> maps used to create the map view.
-### Website Link
+### Website Link 🙌🌍
 <a href="https://country-details-webapp.herokuapp.com/">Click here ✌</a>
 ### Enjoy 😊
