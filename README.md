@@ -26,7 +26,7 @@ https://user-images.githubusercontent.com/77115237/196286011-fc928ff6-a834-4b6f-
  - https://newsapi.org
  - http://api.geonames.org
   
-`asserts\php\countryBorders.geo.json` used for bound the boarder of the countries. <a href="[`Leaflet`](https://leafletjs.com/)">`Leaflet`</a> maps used to create the map view.
+`asserts\php\countryBorders.geo.json` used for bound the boarder of the countries. <a href="https://leafletjs.com">`Leaflet`</a> maps used to create the map view.
 ### Website Link 🙌🌍
 <a href="https://country-details-webapp.herokuapp.com/">Click here ✌</a>
 ### Enjoy 😊
