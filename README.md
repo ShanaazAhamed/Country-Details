@@ -13,7 +13,14 @@ The application is intended to provide a responsive GUI to facilitate certain vi
 7. View the Wikipedia articles
 ```
 
-The following video shows a demonstration of the features provided by the application.
+## Used Technologies 
+<p align="center">
+    <img src="https://skillicons.dev/icons?i=html,js,php" />
+</p>
+
+***
+
+## The following video shows a demonstration of the features provided by the application.
 
 https://user-images.githubusercontent.com/77115237/196286011-fc928ff6-a834-4b6f-9cc2-af3ffe4c18b8.mp4
 
