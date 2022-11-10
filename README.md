@@ -15,7 +15,7 @@ The application is intended to provide a responsive GUI to facilitate certain vi
 
 ## Used Technologies 
 <p align="center">
-    <img src="https://skillicons.dev/icons?i=html,js,php" />
+    <img src="https://skillicons.dev/icons?i=html,bootstrap,js,php" />
 </p>
 
 ***
