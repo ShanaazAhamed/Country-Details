@@ -13,10 +13,7 @@ The application is intended to provide a responsive GUI to facilitate certain vi
 7. View the Wikipedia articles
 ```
 
-## Used Technologies 
-<p align="center">
-    <img src="https://skillicons.dev/icons?i=html,bootstrap,js,jquery,php" />
-</p>
+
 
 ***
 
@@ -38,3 +35,8 @@ https://user-images.githubusercontent.com/77115237/196286011-fc928ff6-a834-4b6f-
 ### Website Link 🙌🌍
 <a href="https://country-details-webapp.herokuapp.com/">Click here ✌</a>
 ### Enjoy 😊
+
+<h2 align="center"> Made With  </h2>
+<p align="center">
+    <img src="https://skillicons.dev/icons?i=html,bootstrap,js,jquery,php" />
+</p>
